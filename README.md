@@ -22,22 +22,14 @@
 
 ### Web
 
-**Python**
-
-- [Python syntax]()
-
-<hr />
+- [Python]()
 
 ### Front-end
 
-**JavaScript**
-
-- [JavaScript Syntax]()
-
-<hr />
+- [Html & Css]()
+- [JavaScript]()
+- [React]()
 
 ### CS
 
-**Algorithm**
-
-- [Baekjoon]()
+- [Algorithm]()
