@@ -22,7 +22,7 @@
 
 ### Web
 
-- [Python]()
+- [Python](https://github.com/kkimke/TIL/tree/master/web/python)
 
 ### Front-end
 
