@@ -29,3 +29,16 @@ print('kkimke', end=' ')
 print('Github')
 # Welcome to kkimke Github
 ```
+
+<br>
+
+## format 사용 (digit, string, float)
+
+```python
+print('%s %s' % ('one', 'two'))  # only string
+print('{} {}'.format('one', 'two'))  # whatever
+print('{1} {0}'.format('one', 'two'))
+# one two
+# one two
+# two one
+```
