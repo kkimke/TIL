@@ -1,4 +1,6 @@
-## separator 옵션
+## print
+
+### separator 옵션
 
 ```python
 print('P', 'Y', 'T', 'H', 'O', 'N')
@@ -22,7 +24,7 @@ print('python', 'google.com', sep='@')
 
 <br>
 
-## end 옵션
+### end 옵션
 
 ```python
 print('Welcome to', end=' ')
@@ -34,7 +36,7 @@ print('Github')
 
 <br>
 
-## format 사용 (string, digit, float)
+### format 사용 (string, digit, float)
 
 ```python
 print('%s %s' % ('one', 'two'))  # only string
@@ -154,9 +156,104 @@ print("{:06.2f}".format(3.141592653589793))
 # 즉 6자리 확보 후 소수 2자리를 출력하고, 나머지는 0으로 채움 (.도 한자리를 차지)
 ```
 
+<hr>
+
+## Variable
+
+### 기본 선언
+
+```python
+n = 70
+
+print(n)  # 70
+print(type(n))  # <class 'int'>
+```
+
 <br>
 
-## Reference
+### 동시 선언
 
-- [Inflearn 파이썬 입문](https://www.inflearn.com/course/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9E%85%EB%AC%B8-%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90/dashboard)
-- [점프 투 파이썬](https://wikidocs.net/book/1)
+```python
+x = y = z = 800
+
+print(x, y, z)  # 800 800 800
+```
+
+<br>
+
+### 재선언
+
+```python
+let = 10
+let = 'change value'
+
+print(let)  # change value
+print(type(let))  # <class 'str'>
+```
+
+```python
+n = 777
+m = n
+m = 400
+
+print(m, n)  # 400 777
+```
+
+<br>
+
+### identity (고유값)
+
+```python
+m = 800
+n = 655
+
+print(id(m))  # 1427246049552
+print(id(n))  # 1427246049584
+print(id(m) == id(n))  # False
+```
+
+```python
+m = 800
+n = 800
+
+print(id(m))  # 1427246049552
+print(id(n))  # 1427246049552
+print(id(m) == id(n))  # True
+
+# python 엔진은 똑같은 변수를 '동일한 값'으로 간주하고 동일한 id를 부여 (python의 효율성)
+```
+
+<br>
+
+## 변수 네이밍 규칙
+
+### 선언법
+
+```python
+# Camel Case : variableLikeThis
+# Pascal Case : VariableLikeThis
+# Snake Case : variable_like_this
+
+# possible
+age = 1
+Age = 2
+aGe = 3
+AGE = 4
+a_g_e = 5
+_age = 6
+age_ = 7
+_AGE_ = 8
+```
+
+<br>
+
+### 예약어
+
+```python
+# 예약어는 변수명 불가능
+
+# Python reserved words
+False def if raise None del import return True elif in try
+and else is while as except lambda with assert finally
+nonlocal yield break for not class from or continue global pass
+```
