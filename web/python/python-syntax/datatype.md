@@ -1,3 +1,14 @@
+## ⚓ Data types
+
+- [int & float](#int-float)
+- [string](#string)
+- [list](#list)
+- [tuple](#tuple)
+- [dictionary](#dictionary)
+- [set](#set)
+
+<hr />
+
 ## Python data type
 
 ```python
@@ -34,7 +45,7 @@ print(type(dict_v))  # <class 'dict'>
 
 <hr>
 
-## int & float
+## int-float
 
 ### 숫자형 연산자
 
@@ -565,4 +576,262 @@ print(t2)  # (1, 2, 3)
 print(t3)  # (4,)
 print(x1, x2, x3)  # 1 2 3
 print(x4, x5, x6)  # 4 5 6
+```
+
+<hr>
+
+## dictionary
+
+- 순서x, 키 중복x, 수정o, 삭제o
+
+### 선언
+
+```python
+a = {'name': 'Kim', 'phone': '01012345678', 'fav': 'breads'}
+b = {0: 'Hello Python'}  # 숫자 key 가능
+c = {'arr': [1, 2, 3, 4]}  # key만 존재한다면 어떤 값도 가능
+```
+
+```python
+# 3가지 방식
+d = {
+    'Name': 'kkimke',
+    'City': 'Busan',
+    'Age': 50,
+    'Grade': 'A',
+    'Status': True
+}
+
+e = dict([
+    ('Name', 'kkimke'),
+    ('City', 'Busan'),
+    ('Age', 50),
+    ('Grade', A),
+    ('Status', True)
+])
+
+f = dict(
+    Name='kkimke,
+    City='Seoul',
+    Age=33,
+    Grade='A',
+    Status=True
+)
+```
+
+<br>
+
+### 출력
+
+```python
+print(a['name'])  # Kim
+print(a.get['name'])  # Kim
+
+# 출력 결과 같음
+# 그러나 만약 name1을 출력할 경우, 첫번째는 에러, 두번째는 None 출력됨(에러로 인해 흐름끊기지 않음)
+
+print(b[0])  # Hello Pythohn
+print(b.get(0))  # Hello Python
+print(f.get('City'))  # Busan
+print(f.get('Age'))  # 50
+```
+
+<br>
+
+### key: value 추가
+
+```python
+a['address'] = 'Seoul'
+print(a)  # {... 'address': 'Seoul'}
+
+a['rank'] = [1, 2, 3]
+print(a)  # {... 'rank': [1, 2, 3]}
+```
+
+<br>
+
+### 길이 확인
+
+```python
+print(len(a))  # 5
+print(len(b))  # 1
+print(len(c))  # 1
+print(len(d))  # 5
+```
+
+<br>
+
+### 딕셔너리 함수
+
+```python
+# dict_key, dict_values, dict_items : 반복문(__iter__)에서 사용 가능
+
+# key값들만 가져오는 함수 (dict_keys)
+print(a.keys())
+print(list(b.keys()))  # 리스트형태로 변환
+
+# values값들만 가져오는 함수 (dict_values)
+print(a.values())
+
+# key와 values값 모두 가져오는 함수 (dict_items)
+print(a.items())
+```
+
+<br>
+
+### 삭제
+
+```python
+print(a.pop('name'))  # Kim
+print(a)  # name: Kim가 선택되어 삭제됨
+
+print(c.pop('arr'))  # [1, 2, 3, 4]
+print(c)  # arr: [1, 2, 3, 4] 삭제되어 빈 {} 출력
+
+print(f.popitem())  # pop은 직접 지정하는 반면, popitem은 임의로 아무 값(key: value)을 꺼내옴
+print(f)  # 임의로(딕셔너리-순서x) 꺼낸값(key: value)이 삭제됨
+```
+
+<br>
+
+### 조회
+
+```python
+print('birth' in a)  # True, birth라는 key가 a에 있는지 조회
+print('city' in d)  # False, 소문자 c이므로
+```
+
+<br>
+
+### 수정
+
+```python
+a['address'] = 'LA'
+print(a)  # address 값 Seoul -> LA
+
+a.update(fav='chicken')
+print(a)  # fav 값 breads -> chicken
+
+temp = {'address': 'Busan'}
+a.update(temp)
+print(a)  # adderss 값 LA -> Busan
+```
+
+<hr>
+
+## set
+
+- 순서x, 중복x
+
+### 선언
+
+```python
+a = set()
+b = set([1, 2, 3, 4])
+c = set([1, 2, 'Pen', 'Cap', 'Plate'])
+d = {'choco', 'cake', 'call', 'coupon'}  # {key없이 values만 나열하면 set}
+e = {42, 'choco', (1, 2, 3), 3.14159}
+```
+
+### 중복 시
+
+```python
+f = set([1, 2, 3, 4, 4, 4])
+
+print(f)  # {1, 2, 3, 4}, 중복 허용x
+```
+
+<br>
+
+### 변환
+
+- set -> tuple
+
+```python
+t = tuple(b)
+
+print(type(t), t)  # <class 'tuple'> (1, 2, 3, 4)
+print(t[0], t[1:3])  # 1 (2, 3)
+```
+
+- set -> list
+
+```python
+l = list(d)
+
+print(type(l), l)  # <class 'list'> ['choco', 'cake', 'call', 'coupon']
+```
+
+<br>
+
+### 길이
+
+```python
+print(len(a))  # 0, 공집합
+print(len(b))  # 4
+print(len(e))  # 4
+```
+
+<br>
+
+### set 활용
+
+- 기호와 함수로 호출해보자
+
+```python
+s1 = set([1, 2, 3, 4, 5, 6])
+s2 = set([4, 5, 6, 7, 8, 9])
+
+#교집합
+print(s1 & s2)  # {4, 5, 6}
+print(s1.intersection(s2))  # {4, 5, 6}
+
+#합집합
+print(s1 | s2)  # {1, 2, 3, 4, 5, 6, 7, 8, 9}
+print(s1.union(s2))  # {1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+#차집합
+print(s1 - s2)  # {1, 2, 3}
+print(s1.difference(s2)  # {1, 2, 3}
+```
+
+<br>
+
+### 중복 원소 확인
+
+```python
+# 교집합 확인
+print(s1.isdisjoint(s2))  # False
+
+# 부분집합 확인
+small = {1, 2, 3}
+big = {1, 2, 3, 4, 5}
+
+print(small.issubset(big))  # True
+print(big.issubset(small)  # False
+
+print(big.issuperset(small))  # True
+print(small.issuperset(big))  # False
+```
+
+<br>
+
+### 추가 및 제거
+
+```python
+# list는 데이터 삽입할때 append, insert, index로 접근하지만, set에는 메소드가 있음
+
+s1 = set([1, 2, 3, 4])
+
+s1.add(5)
+print(s1)  # {1, 2, 3, 4, 5}
+
+s1.remove(2)
+print(s1)  # {1, 3, 4, 5}
+
+s1.discard(3)
+print(s1)  # {1, 4, 5}
+
+s1.clear()
+print(s1)  # set(), 빈 집합 출력됨
 ```
