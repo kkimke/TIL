@@ -438,6 +438,8 @@ power.clear() # -> 빈 list
 ### 반복문 활용
 
 ```python
+a = [5, 7, 4, 3, 2, 8, 9]
+
 while a:
 	data = a.pop()
 	print(data)
@@ -451,4 +453,116 @@ while a:
 # 5
 
 # pop으로 끝에서부터 계속 꺼내 삭제, 비어있을때까지 반복
+```
+
+<hr>
+
+## tuple
+
+- 순서o, 중복o, 수정x, 삭제x
+- packing & unpacking
+
+### 선언
+
+```python
+a = (1, 2)  # 튜플 선언은 소괄호 안에, 괄호 생략 가능
+b = 1,
+
+print(type(a), type(b))  # <class 'tuple'> <class 'tuple'>
+
+# 이때 원소가 하나일 경우 끝에 콤마,를 찍지 않으면 class가 int로 출력됨 주의 (원소가 두 개 이상일때는 상관없음)
+
+c = (11, 12, 13, 14)
+d = (100, 1000, 'Ace', 'Base', 'Captain')
+e = (100, 1000, ('Ace', 'Base', 'Captain'))  # 중첩 가능
+```
+
+<br>
+
+### 수정 불가
+
+```python
+d[0] = 1500  # 에러
+```
+
+<br>
+
+### 인덱싱
+
+```python
+print('d- ', d[1])  # d- 1000
+print('d- ', d[0] + d[1] + d[1])  # d- 2100
+print('d- ', d[-1])  # d- Captain
+print('e- ', e[-1])  # e- ('Ace', 'Base', 'Captain')
+print('e- ', e[-1][1])  # e- Base
+print('e- ', list(e[-1][1]))  # e- ('B', 'a', 's', 'e')
+
+# tuple이 list로 변환되어, 문자 단위로 분해되어 출력됨
+# list로 변환되었기 때문에 수정, 삭제 가능해짐
+```
+
+### 슬라이싱
+
+```python
+print('d- ', d[0:3])  # d- (100, 1000, 'Ace')
+print('d- ', d[2:])  # d- ('Ace', 'Base', 'Captain')
+print('e- ', e[2][1:3])  # e- ('Base', 'Captain')
+```
+
+<br>
+
+### 튜플 연산
+
+```python
+print('c + d', c + d)  # c + d (11, 12, 13, 14, 100, 1000, 'Ace', 'Base', 'Captain')
+print('c * 3', c * 3)  # c * d (11, 12, 13, 14, 11, 12, 13, 14, 11, 12, 13, 14)
+```
+
+<br>
+
+### 튜플 함수
+
+```python
+a = (5, 2, 3, 1, 4)
+print('a- ', a)
+print('a- ', a.index(3))  # a- 2  # 숫자 3이 들어간 위치 : 인덱스 2
+print('a- ', a.count(2))  # a- 1  # 숫자 2의 개수 : 1개
+```
+
+<br>
+
+### 팩킹
+
+- 하나로 묶는 것
+- 인덱싱 가능, 괄호 생략 가능
+
+```python
+t = ('apple', 'banana', 'city', 'dinosaur')
+
+print(t[0])  # apple
+print(t[-1])  # dinosaur
+```
+
+### 언팩킹
+
+- 반대로, 하나로 묶여있던 tuple을 풀어 각각 순서에 맞는 원소에 대입
+- 괄호 생략 가능
+
+```python
+(x1, x2, x3, x4) = t
+
+print(type(x1), type(x2), type(x3), type(x4))  # <class 'str'> <class 'str'> <class 'str'> <class 'str'>
+print(x1, x2, x3, x4)  # apple banana city dinosaur
+```
+
+```python
+t2 = 1, 2, 3  # packing
+t3 = (4,)  # packing
+(x1, x2, x3) = t2  # unpacking
+x4, x5, x6 = 4, 5, 6  # unpacking
+
+print(t2)  # (1, 2, 3)
+print(t3)  # (4,)
+print(x1, x2, x3)  # 1 2 3
+print(x4, x5, x6)  # 4 5 6
 ```
