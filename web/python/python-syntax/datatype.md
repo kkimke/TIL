@@ -289,3 +289,166 @@ a = "z"
 print(ord(a))  # 122 (z에 해당하는 아스키 코드는 122번)
 print(chr(122))  # z (아스키 코드 122번에 해당하는 문자는 z)
 ```
+
+<hr>
+
+## list
+
+- 순서o, 중복o, 수정o, 삭제o
+
+### 선언
+
+```python
+a = []
+b = list()
+c = [70, 75, 80, 85]
+d = [1000, 10000, "Ace", "Base", "Captain"]   # 서로 다른 자료형
+e = [1000, 10000, ["Ace", "Base", "Captain"]] # 리스트 안에 리스트 (중첩)
+f = [21.42, "foobar", 3, 4, False, 3.14159]
+```
+
+<br>
+
+### 인덱싱
+
+```python
+print("d - ", type(d), d)  # d - <class 'list'> [1000, 10000, 'Ace', 'Base', 'Captain']
+print("d - ", d[1])  # d - 10000
+print("d - ", d[0] + d[1] + d[1])  # d - 21000
+print("d - ", d[-1])  # d - Captain
+print("e - ", e[-1][1])  # e - Base
+
+print(type(e[-1][1]))  # <class 'str'>
+print(list(e[-1][1]))  # ['B', 'a', 's', 'e']
+```
+
+<br>
+
+### 슬라이싱
+
+```python
+print("d - ", d[0:3])  # d - [1000, 10000, 'Ace']
+print("d - ", d[2:]  # d - ['Ace', 'Base', 'Captain']
+print("e - ", e[-1][1:3]  # e - ['Base', 'Captain']
+```
+
+<br>
+
+### 리스트 연산
+
+```python
+print(c + d)  # [70, 75, 80, 85, 1000, 10000, 'Ace', 'Base', 'Captain']
+print(c * 3)  # [70, 75, 80, 85, 70, 75, 80, 85, 70, 75, 80, 85]
+print"test" + str(c[0]))  # test70, 바로 test와 c[0]를 더할 시 에러나므로 형변환시켜 계산
+```
+
+<br>
+
+### 값 비교
+
+```python
+print(c[:3])  # [70, 75, 80]
+print(c[3:])  # [85]
+print(c == c[:3] + c[3:])  # True
+```
+
+<br>
+
+### identity (id)
+
+```python
+temp = c
+print(temp, c)
+print(id(temp) == id(c))  # True # 즉 같은 id를 갖고, 한쪽이 바뀌면 다른쪽도
+```
+
+<br>
+
+### 리스트 수정, 삭제
+
+```python
+c[0] = 4
+print(c)  # [4, 75, 80, 85]
+
+c[1:2] = ['a', 'b', 'c']
+print(c)  # [4, a, b, c, 80, 85] # 두번째인 75자리에 a,b,c가 들어감
+
+#만약 다음과 같은 경우였다면?
+c[1:2] = [['a', 'b' ,'c']]
+print(c)  # [4, ['a', 'b', 'c'], 80, 85] # 리스트 안에 리스트가 들어감
+
+#만약 다음과 같은 경우였다면?
+c[1] = ['a', 'b', 'c']
+print(c)  # [4, ['a', 'b', 'c'], 80, 85], 리스트 중첩
+```
+
+<br>
+
+### 리스트 함수
+
+```python
+a = [5, 2, 3, 1, 4]
+
+a.append(10)
+print('a- ', a)  # a- [5, 2, 3, 1, 4, 10], 끝에 값을 추가
+
+a.sort()
+print('a- ', a)  # a- [1, 2, 3, 4, 5, 10], 오름차순 정렬
+
+a.reverse()
+print('a- ', a)  # a- [10, 5, 4, 3, 2, 1], 기존값의 반대로 정렬
+
+print('a- ', a.index(3))  # a- 3, '숫자3'의 인덱스 번호 (위치)
+
+a.insert(2, 7)
+print('a- ', a)  # a- [10, 5, 7, 4, 3, 2, 1], 2번째 '위치'에 7이라는 '값' 넣기
+
+a.remove(10)
+print('a- ', a)  # a- [5, 7, 4, 3, 2, 1]  , 10이라는 값 제거
+
+a.pop()
+print('a- ', a)  # a- [5, 7, 4, 3, 2], 끝 원소를 불러온 후, 제거
+
+print('a -', a.count(4))  # 1, 리스트 안에 4가 몇개 있는지
+
+ex = [8, 9]
+a.extend(ex)
+print('a- ', a)  # a- [5, 7, 4, 3, 2, 8, 9], a리스트 끝에 ex리스트[8,9]를 추가
+```
+
+<br>
+
+### 삭제하는 법
+
+```python
+# (1) remove() : 원하는 값을 바로 삭제
+# (2) pop() : 끝에 있는 값을 삭제
+# (3) del : index번호로 삭제
+power = [1, 2, 3, 4, 5]
+del power[2]  # 2번 값을 삭제
+# (4)
+power[2:3] = []  # 2번 값을 삭제
+
+# (5) 모두 삭제
+power.clear() # -> 빈 list
+```
+
+<br>
+
+### 반복문 활용
+
+```python
+while a:
+	data = a.pop()
+	print(data)
+
+# 9
+# 8
+# 2
+# 3
+# 4
+# 7
+# 5
+
+# pop으로 끝에서부터 계속 꺼내 삭제, 비어있을때까지 반복
+```
