@@ -1,7 +1,5 @@
 # Python-syntax
 
-##
-
 <br>
 
 | Header                    | Description                            |
