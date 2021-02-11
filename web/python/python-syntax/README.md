@@ -2,15 +2,15 @@
 
 <br>
 
-| Header                    | Description                            |
-| ------------------------- | -------------------------------------- |
-| [파이썬 시작](./basic.md) | print, variable                        |
-| [자료형](./datatype.md)   | int float, str, list, tuple, dict, set |
-| 흐름제어                  | if, for, while                         |
-| 함수                      | functions                              |
-| 입력                      | input                                  |
-| 클래스, 모듈, 패키지      | class, module, package                 |
-| 예외처리                  | exception                              |
+| Header                        | Description                            |
+| ----------------------------- | -------------------------------------- |
+| [파이썬 시작](./basic.md)     | print, variable                        |
+| [자료형](./datatype.md)       | int float, str, list, tuple, dict, set |
+| [흐름제어](./flow-control.md) | if, for, while                         |
+| 함수                          | functions                              |
+| 입력                          | input                                  |
+| 클래스, 모듈, 패키지          | class, module, package                 |
+| 예외처리                      | exception                              |
 
 <br>
 
