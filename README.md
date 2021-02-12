@@ -19,4 +19,4 @@
 - [Html & Css]()
 - [JavaScript]()
 - [React]()
-- [Python](https://github.com/kkimke/TIL/tree/master/web/python)
+- [Python](https://github.com/kkimke/TIL/tree/master/list/python)
