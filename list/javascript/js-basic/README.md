@@ -2,7 +2,7 @@
 
 <br>
 
-## [자바스크립트 문법]()
+## [자바스크립트 문법](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-syntax)
 
 - 변수
 - 자료형
