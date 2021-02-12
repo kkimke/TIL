@@ -10,26 +10,13 @@
 
 > Slow Steady Studying
 
-<br />
-
-## ⚓ TOC
-
-- [Web](#web)
-- [Front-end](#front-end)
-- [CS](#cs)
+<br>
 
 <hr />
 
-### Web
-
-- [Python](https://github.com/kkimke/TIL/tree/master/web/python)
-
-### Front-end
+## List
 
 - [Html & Css]()
 - [JavaScript]()
 - [React]()
-
-### CS
-
-- [Algorithm]()
+- [Python](https://github.com/kkimke/TIL/tree/master/web/python)
