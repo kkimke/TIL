@@ -12,14 +12,14 @@
 
 <br>
 
-## [함수와 이벤트]()
+## [함수와 이벤트](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-function)
 
 - 함수
 - 이벤트
 
 <br>
 
-## [자바스크립트 객체]()
+## [자바스크립트 객체](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-object)
 
 - 객체
 
