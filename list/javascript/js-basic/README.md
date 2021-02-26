@@ -1,36 +1,17 @@
-# Javascript-basic
+# Javascript studying
 
 <br>
 
-## [자바스크립트 문법](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-syntax)
+## basic
 
-- 변수
-- 자료형
-- 연산자
-- 조건문
-- 반복문
+- [자바스크립트 문법](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-syntax)
+- [함수와 이벤트](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-function)
+- [자바스크립트 객체](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-object)
 
 <br>
 
-## [함수와 이벤트](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-function)
+- Reference : Do it! HTML+CSS+자바스크립트 웹 표준의 정석
 
-- 함수
-- 이벤트
+## words
 
-<br>
-
-## [자바스크립트 객체](https://github.com/kkimke/TIL/tree/master/list/javascript/js-basic/js-object)
-
-- 객체
-
-<br>
-
-## [문서 객체 모델(DOM)]()
-
-- DOM
-
-<br>
-
-👉 Reference
-
-- Do it! HTML+CSS+자바스크립트 웹 표준의 정석
+-
