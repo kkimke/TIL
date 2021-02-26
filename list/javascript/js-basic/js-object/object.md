@@ -121,3 +121,88 @@ new Date("2021-02-25T10:00:00");
 
 - window객체 > document, nevigator, history, location, screen 객체 > ...
 - window객체의 메서드인 alert(), prompt() 등을 사용할때는 window를 생략하여 사용
+
+<br>
+
+## 문서 객체 모델(DOM)
+
+- js를 이용하여 웹 문서에 접근하고 제어할 수 있도록 객체를 사용해 웹 문서를 체계적으로 정리하는 방법
+- DOM tree : html > head, body > meta, title, h1, img ... 이와 같이 부모와 자식 구조로 표현되는데 마치 나무 형태와 같음
+- 이렇게 웹 문서를 해석할 DOM 구조를 머릿 속에 그릴 수 있어야 js로 객체에 접근하여 원하는 부분 수정 가능
+
+<br>
+
+### DOM요소에 접근하여 속성 가져오기
+
+```js
+document.getElementById("id");
+document.getElementByClassName("class");
+document.getElementByTagName("p");
+```
+
+```js
+document.querySelecotr("#id");
+document.querySelectorAll(".class");
+```
+
+### 웹 요소의 내용 수정
+
+```js
+var now = new Date();
+
+function innertext() {
+  document.getElementById("current").innerText = now;
+}
+```
+
+```js
+function innerhtml() {
+  document.getElementById("current").innerHTML = "<em>" + now + "</em>";
+}
+```
+
+### DOM에서 이벤트 처리
+
+```js
+var cup = document.querySelector("#cup");
+cup.onclick = function () {
+  alert("이미지를 클릭했습니다");
+};
+```
+
+```js
+cup.onclick = changePic;
+
+function changePic() {
+  cup.src = "images/cup.png";
+}
+```
+
+### 한 요소에 여러 이벤트 처리기
+
+```
+요소.addEventListener("이벤트", 함수, 캡처 여부);
+```
+
+```js
+var cover = document.getElementById("cover");
+cover.addEventListener("mouseover", changePic);  // 포인터 올리면 changePic함수 실행
+cover.addEventListener("mouseout", originPic);  // 포인터 내리면 originPic함수 실행
+
+function changePic(){
+  ...
+}
+function originPic(){
+  ...
+}
+```
+
+### CSS속성 접근
+
+```
+document.요소명.style.속성명
+```
+
+```js
+document.getElementById("des").style.color = "blue";
+```
